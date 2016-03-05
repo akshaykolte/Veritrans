@@ -16,11 +16,12 @@ import urllib
 from  portal.models import *
 # Create your views here.
 
-def index(request):
+def count(request):
 	context = {}
+	count = PaymentGateway.objects.count()
+	print count
+	context['count'] = count
 	return render(request,'view-profile.html', context)
-    #return HttpResponse("Hello, world. You're at the polls index.")
-
 
 def search(request):
 	context = {}
